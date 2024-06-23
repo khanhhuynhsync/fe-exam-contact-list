@@ -1,6 +1,26 @@
-<div class="user-overview" (click)="onUserClick()">
-  <p>Name: {{ user.firstName }} {{ user.lastName }}</p>
-  <p>Email: {{ user.email }}</p>
-  <p>Phone: {{ user.phone }}</p>
-  <p>Gender: {{ user.gender }}</p>
+<div class="card user-overview">
+  <img src="{{ user.image }}" class="card-img-top user-thumbnail" alt="{{ user.firstName }} {{ user.lastName }}">
+  <div class="card-body text-start">
+    <p>{{ user.firstName }} {{ user.lastName }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>Gender: {{ user.gender }}</p>
+  </div>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userDetailModel">
+    Detail
+  </button>
+  <div class="modal fade" id="userDetailModel" tabindex="-1" aria-labelledby="userDetailModel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-user-detail [user]="user"></app-user-detail>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

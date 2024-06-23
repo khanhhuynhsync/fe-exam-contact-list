@@ -1,0 +1,15 @@
+.user-overview {
+  background-color: ghostwhite;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.user-overview .user-thumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

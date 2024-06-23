@@ -1,19 +1,25 @@
-<h1 class="text-lg-center">User contacts</h1>
+<div class="container">
+  <h1 class="text-lg-center">User contacts</h1>
 
-<label for="search-input">Search users:</label>
-<input id="search-input" type="text" placeholder="Search users" (input)="onSearch($event)">
+  <div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Search users</span>
+      <input type="text" class="form-control" (input)="onSearch($event)">
+    </div>
 
-<label for="gender-filter">Filter by gender:</label>
-<select id="gender-filter" (change)="onFilter($event)">
-  <option value="">All</option>
-  <option value="male">Male</option>
-  <option value="female">Female</option>
-</select>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="gender-filter">Gender</label>
+      <select class="form-select" id="gender-filter" (change)="onFilter($event)">
+        <option value="">All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
 
-<app-user-detail *ngIf="selectedUser" [user]="selectedUser"></app-user-detail>
-
-<ul>
-  <li *ngFor="let user of users">
-    <app-user-overview [user]="user" (userClicked)="handleUserClick($event)"></app-user-overview>
-  </li>
-</ul>
+    <div class="user-list">
+      <div *ngFor="let user of users">
+        <app-user-overview [user]="user" (userClicked)="handleUserClick($event)"></app-user-overview>
+      </div>
+    </div>
+  </div>
+</div>
