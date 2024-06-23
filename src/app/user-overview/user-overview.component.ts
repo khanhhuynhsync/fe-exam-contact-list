@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {UserDetailComponent} from "../user-detail/user-detail.component";
 
 @Component({
@@ -12,9 +12,4 @@ import {UserDetailComponent} from "../user-detail/user-detail.component";
 })
 export class UserOverviewComponent {
   @Input() user: any;
-  @Output() userClicked = new EventEmitter<any>();
-
-  onUserClick() {
-    this.userClicked.emit(this.user);
-  }
 }

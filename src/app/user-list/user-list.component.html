@@ -18,7 +18,7 @@
 
     <div class="user-list">
       <div *ngFor="let user of users">
-        <app-user-overview [user]="user" (userClicked)="handleUserClick($event)"></app-user-overview>
+        <app-user-overview [user]="user"></app-user-overview>
       </div>
     </div>
   </div>

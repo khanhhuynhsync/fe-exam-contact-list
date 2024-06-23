@@ -7,10 +7,10 @@
     <p>Gender: {{ user.gender }}</p>
   </div>
 
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userDetailModel">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#userDetailModel' + user.id">
     Detail
   </button>
-  <div class="modal fade" id="userDetailModel" tabindex="-1" aria-labelledby="userDetailModel" aria-hidden="true">
+  <div class="modal fade" [attr.id]="'userDetailModel' + user.id" tabindex="-1" aria-labelledby="userDetailModel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">

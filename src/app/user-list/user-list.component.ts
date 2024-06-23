@@ -19,7 +19,6 @@ import {UserDetailComponent} from "../user-detail/user-detail.component";
 export class UserListComponent implements OnInit {
   users: any[] = [];
   originalUsers: any[] = [];
-  selectedUser: any;
 
   constructor(private userService: UserService) {
   }
@@ -49,9 +48,5 @@ export class UserListComponent implements OnInit {
     } else {
       this.users = [...this.originalUsers];
     }
-  }
-
-  handleUserClick(user: any) {
-    this.selectedUser = user;
   }
 }
